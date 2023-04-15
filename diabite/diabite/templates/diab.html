@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>diab</title>
+</head><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+<style>
+    body {
+        background-image: url({{url_for('static' ,filename='bg1.jpg')}})
+    }
+    .predicted-crop {
+        color: red;
+        font-weight: bolder;
+        font-family: "Lucida Console", "Courier New", monospace;
+        text-transform: capitalize;
+      }
+      
+</style>
+
+<body>
+    <div style=" text-align: center" class="my-2">
+   <center> <h1> This is diabetes predection website </h1></center>
+    </div>
+    <div style=" text-align: center" class="my-5">
+    <form method="POST" action="/">
+
+        <div style=" text-align: center">
+        <label for="pregnancies"  class="font-weight-bold">pregnancies:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;</label>
+        <input type="text" id="pregnancies" name="pregnancies" required  style="border-radius: 7px"><br>
+        </div>
+
+
+        <div style="text-align: center;">
+            <label for="glucose" class="font-weight-bold">glucose:&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <input type="text" id="glucose" name="glucose" required style="border-radius: 7px">
+        </div>
+        
+        <div style=" text-align: center">
+        <label for="bloodpressure"  class="font-weight-bold">bloodpressure:&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</label>
+        <input type="text" id="bloodpressure" name="bloodpressure" required  style="border-radius: 7px"><br>
+            </div>
+
+            <div style="text-align: center">
+                <label for="skinthickness" class="font-weight-bold">skinthickness:&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                <input type="text" id="skinthickness" name="skinthickness" required  style="border-radius: 7px"><br>
+            </div>
+            
+
+
+        <div style="text-align: center;">
+            <label for="insulin" class="font-weight-bold">insulin:&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</label>
+            <input type="text" id="insulin" name="insulin" required  style="border-radius: 7px"><br>
+        </div>
+        
+
+
+
+
+         <div style=" text-align: center">
+        <label for="bmi"  class="font-weight-bold">bmi:&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</label>
+        <input type="text" id="bmi" name="bmi" required  style="border-radius: 7px"><br>
+                </div>
+
+
+        <div style=" text-align: center">
+            <label for="diabetespedigreefunction"  class="font-weight-bold">diabetespedigreefunction: &nbsp; &nbsp;</label>
+        <input type="text" id="diabetespedigreefunction" name="diabetespedigreefunction" required  style="border-radius: 7px">
+        </div>
+
+       <div style=" text-align: center">
+        <label for="age"  class="font-weight-bold">age:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</label>
+        <input type="text" id="age" name="age" required  style="border-radius: 7px"><br>
+                </div>
+
+<div class="text-center">
+<input type= "submit" value="submit" class="btn btn-primary">
+
+    </form>
+</div>
+<center><h1 style="font-family: Arial, sans-serif;"> &nbsp;<h1>{{ diabetes_prediction}}</h1>
+   </center>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+</body>
+</html>

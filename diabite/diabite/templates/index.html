@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crop Prediction</title>
+</head><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+<style>
+    body {
+        background-image: url({{url_for('static' ,filename='bg.jpg')}})
+    }
+    .predicted-crop {
+        color: red;
+        font-weight: bolder;
+        font-family: "Lucida Console", "Courier New", monospace;
+        text-transform: capitalize;
+      }
+      
+</style>
+
+<body>
+    <header class="bg-dark text-white" style="padding:20px;">
+        <marquee>Crop Predection System</marquee>
+    </header>
+    
+   
+    <div style=" text-align: center" class="my-2">
+   <center> <h1> This is Crop Predection ebsite </h1></center>
+    </div>
+    <div style=" text-align: center" class="my-5">
+    <form method="POST" action="{{ url_for('predict') }}">
+        <div style=" text-align: center">
+        <label for="nitrogen"  class="font-weight-bold">Nitrogen: &nbsp;&nbsp; &nbsp; &nbsp;</label>
+        <input type="text" id="nitrogen" name="nitrogen" required  style="border-radius: 7px"><br>
+        </div>
+        <div style="text-align: center;">
+            <label for="phosphorus" class="font-weight-bold">Phosphorus:&nbsp;&nbsp;&nbsp;</label>
+            <input type="text" id="phosphorus" name="phosphorus" required style="border-radius: 7px">
+        </div>
+        
+        <div style=" text-align: center">
+        <label for="potassium"  class="font-weight-bold">Potassium: &nbsp;&nbsp; &nbsp;</label>
+        <input type="text" id="potassium" name="potassium" required  style="border-radius: 7px"><br>
+            </div>
+
+            <div style="text-align: center">
+                <label for="temperature" class="font-weight-bold">Temperature:&nbsp;</label>
+                <input type="text" id="temperature" name="temperature" required  style="border-radius: 7px"><br>
+            </div>
+            
+
+
+        <div style="text-align: center;">
+            <label for="humidity" class="font-weight-bold">Humidity:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</label>
+            <input type="text" id="humidity" name="humidity" required  style="border-radius: 7px"><br>
+        </div>
+        
+
+
+
+
+         <div style=" text-align: center">
+        <label for="ph"  class="font-weight-bold">PH:&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</label>
+        <input type="text" id="ph" name="ph" required  style="border-radius: 7px"><br>
+                </div>
+
+
+        <div style=" text-align: center">
+            <label for="rainfall"  class="font-weight-bold">Rainfall:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;</label>
+        <input type="text" id="rainfall" name="rainfall" required  style="border-radius: 7px">
+        </div><br>
+
+<div class="text-center">
+    <button type="submit" class="btn btn-primary">Submit</button>
+</div>
+
+    </form>
+</div>
+<center><h1 style="font-family: Arial, sans-serif;"> predicted crop :&nbsp;<h1 class="predicted-crop">{{ crop_prediction }}</h1>
+   </center>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+</body>
+</html>
